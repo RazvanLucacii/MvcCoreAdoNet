@@ -1,0 +1,23 @@
+﻿@model List<Mascota>
+
+<h1>Lista Mascotas</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Raza</th>
+            <th>Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Mascota m in Model)
+        {
+            <tr>
+                <td>@m.nombre</td>
+                <td>@m.raza</td>
+                <td>@m.edad</td>
+            </tr>
+        }
+    </tbody>
+</table>

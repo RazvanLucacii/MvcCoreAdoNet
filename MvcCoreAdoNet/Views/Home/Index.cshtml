@@ -1,0 +1,20 @@
+﻿<div class="container m-5">
+    <h1 style="color: blue" id="cambiaMensaje">
+        Vista Home :D
+    </h1>
+
+    <button class="btn btn-danger" id="botonCambiar">
+        Boton Cambiar
+    </button>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#botonCambiar").click(function () {
+                $("#cambiaMensaje").text("Esto se ha cambiado a Home.")
+            })
+        })
+    </script>
+}
+
