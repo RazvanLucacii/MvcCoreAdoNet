@@ -1,0 +1,61 @@
+﻿@model ModelDoctores
+@{
+    List<string> especialidades = ViewData["ESPECIALIDADES"] as List<string>;
+}
+
+
+<div class="container mt-5">
+    <h1>
+        Especialidad Doctores One Model
+    </h1>
+
+    <form method="post">
+        <label>Introduzca la especialidad</label>
+        <select name="especialidad">
+            @foreach (string especialidad in Model.Especialidades)
+            {
+                <option value="@especialidad">@especialidad</option>
+            }
+        </select>
+        <button class="btn btn-warning">
+            Buscar
+        </button>
+    </form>
+    <hr/>
+    <form method="post">
+        <label>Introduzca la especialidad</label>
+        <select name="especialidad">
+            @foreach (string especialidad in especialidades)
+            {
+                <option value="@especialidad">@especialidad</option>
+            }
+        </select>
+        <button class="btn btn-warning">
+            Buscar
+        </button>
+    </form>
+    <hr/>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID Hospital</th>
+                <th>ID Doctor</th>
+                <th>Especialidad</th>
+                <th>Apellido</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Doctor doc in Model.Doctores)
+            {
+                <tr>
+                    <td>@doc.Hospital_cod</td>
+                    <td>@doc.Doctor_no</td>
+                    <td>@doc.Especialidad</td>
+                    <td>@doc.Apellido</td>
+                    <td>@doc.Salario</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,25 +1,39 @@
 ﻿@model List<Hospital>
 
-<h1>Lista Hospitales</h1>
+<div class="container mt-5">
+    <h1>Lista Hospitales</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Camas</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Hospital h in Model)
-        {
+    <p>
+        <a class="btn btn-success" asp-controller="Hospitales" asp-action="Create">
+            Nuevo Hospital
+        </a>
+    </p>
+
+    <table class="table table-bordered">
+        <thead>
             <tr>
-                <td>@h.Nombre</td>
-                <td>@h.Direccion</td>
-                <td>@h.Telefono</td>
-                <td>@h.Camas</td>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Camas</th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (Hospital h in Model)
+            {
+                <tr>
+                    <td>@h.Nombre</td>
+                    <td>@h.Direccion</td>
+                    <td>@h.Telefono</td>
+                    <td>@h.Camas</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", "Hospitales", new {idHospital = h.IdHospital}, new { @class = "btn btn-primary"})
+                        @Html.ActionLink("Edit", "Edit", "Hospitales", new {idHospital = h.IdHospital}, new { @class = "btn btn-warning"})
+                        @Html.ActionLink("Delete", "HospitalesView", "Hospitales", new {eliminar= h.IdHospital}, new { @class = "btn btn-danger"})
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

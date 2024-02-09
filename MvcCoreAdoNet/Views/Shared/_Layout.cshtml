@@ -48,6 +48,12 @@
               <li>
                   <a  asp-controller="Hospitales" asp-action="HospitalesView" class="nav-link">Hospitales</a>
               </li>
+              <li>
+                  <a asp-controller="Doctores" asp-action="DoctoresView" class="nav-link">Doctores</a>
+              </li>
+              <li>
+                  <a asp-controller="Doctores" asp-action="DoctoresEspecialidadOneModel" class="nav-link">Doctores Especialidades</a>
+              </li>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -59,7 +65,7 @@
     </header>
 
 <!-- Begin page content -->
-    <main class="flex-shrink-0">
+    <main class="flex-shrink-0 mt-5">
         @RenderBody()
     </main>
 

@@ -1,0 +1,27 @@
+﻿<div class="container mt-5">
+    <h1>Crear Hospital</h1>
+
+    <p>
+        <a class="btn btn-info" asp-controller="Hospitales" asp-action="HospitalesView">
+            Atras
+        </a>
+    </p>
+
+    <form method="post">
+        <label>Id Hospital</label>
+        <input class="form-control" name="idHospital" type="number" />
+        <label>Nombre</label>
+        <input class="form-control" name="nombre" type="text" />
+        <label>Direccion</label>
+        <input class="form-control" name="direccion" type="text" />
+        <label>Telefono</label>
+        <input class="form-control" name="telefono" type="text"/>
+        <label>Camas</label>
+        <input class="form-control" name="camas" type="number" />
+        <button class="btn btn-dark">
+            Insertar Hospital
+        </button>
+    </form>
+    <hr/>
+    <h1>@ViewData["MENSAJE"]</h1>
+</div>

@@ -1,0 +1,18 @@
+﻿@model Hospital
+<div class="container mt-5">
+    <h1>Detalles Hospital</h1>
+
+    <p>
+        <a class="btn btn-info" asp-controller="Hospitales" asp-action="HospitalesView">
+            Atras
+        </a>
+    </p>
+
+    <dl>
+        <dt>Nombre: @Model.Nombre</dt>
+        <dd>ID Hospital: @Model.IdHospital</dd>
+        <dd>Direccion: @Model.Direccion</dd>
+        <dd>Telefono: @Model.Telefono</dd>
+        <dd>Camas: @Model.Camas</dd>
+    </dl>
+</div>
